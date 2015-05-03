@@ -61,6 +61,7 @@
   height: 10px;
   background: none;
   border:0;
+  outline: 0;
 }
 #gallery .gallery-go-next:after{
   content: '';
@@ -80,6 +81,7 @@
   border:0;
   width: 20px;
   height: 10px;
+  outline: 0;
 }
 #gallery .gallery-go-prev:after{
   content: '';
@@ -103,6 +105,7 @@
   top: 50%;
   margin-top: -20px;
   opacity: 0;
+    outline: 0;
 }
 
 #gallery .gallery-play:after{
