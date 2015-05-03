@@ -1,0 +1,130 @@
+#gallery {
+  position: absolute;
+  top: 50%;
+  left: -260px;
+  height: 500px; width: 400px;
+  margin-top: -200px;
+}
+#gallery .gallery-image{
+  border: 2px solid blue;
+  display:block;
+  opacity: 0;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 50%;
+  transform: translate(0,-50%) rotate(-90deg) scale(0.8);
+  transition: 0s transform, 0s 0s opacity;
+}
+
+#gallery .gallery-image img{
+  width: 100%;
+  display: block;
+}
+
+#gallery .gallery-image.active,
+#gallery .gallery-image.prev,
+#gallery .gallery-image.next,
+#gallery .gallery-image.qprev,
+#gallery .gallery-image.qnext {
+  display:block;
+  opacity: 1;
+  transform: scale(0.8);
+  transition: 1s transform, 0s 1s opacity;
+}
+
+#gallery .gallery-image.qprev {
+  transform: translate(0,-50%) rotate(-90deg);
+}
+#gallery .gallery-image.qnext {
+  transform: translate(0,-50%) rotate(90deg);
+}
+
+#gallery .gallery-image.active {
+  transform: translate(0,-50%) rotate(0deg);
+  z-index:3;
+}
+#gallery .gallery-image.prev {
+  transform: translate(0,-50%) rotate(-30deg) scale(0.8);
+  z-index:1;
+}
+#gallery .gallery-image.next {
+  transform: translate(0,-50%) rotate(30deg) scale(0.8);
+  z-index:1;
+}
+#gallery .gallery-go-next{
+  position: absolute;
+  right: 90px;
+  bottom: 0px;
+  width: 20px;
+  height: 10px;
+  background: none;
+  border:0;
+}
+#gallery .gallery-go-next:after{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid transparent;
+  border-right:8px solid transparent;
+  border-top: 9px solid red;
+}
+#gallery .gallery-go-prev {
+  position: absolute;
+  right: 90px;
+  background: none;
+  border:0;
+  width: 20px;
+  height: 10px;
+}
+#gallery .gallery-go-prev:after{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 9px solid red;
+}
+#gallery .gallery-play {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 0;
+  background-color: rgba(0,0,0, 0.5);
+  right: 90px;
+  top: 50%;
+  margin-top: -20px;
+  opacity: 0;
+}
+
+#gallery .gallery-play:after{
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 15px solid #fff;
+  border-bottom: 10px solid transparent;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-top: -10px;
+  margin-left: -5px;
+}
+
+#gallery .gallery-play:hover{
+  background-color: rgba(0,0,0, 0.7);
+}
+
+#gallery .gallery-image.active .gallery-play{
+  opacity: 1;
+  transition: 0.5s 1s opacity;
+}
